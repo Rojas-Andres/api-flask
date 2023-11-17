@@ -3,11 +3,11 @@
 
 # Correr proyecto local windows
 
-pip install virtualenv 
-virtualenv venv
-.\venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
+- pip install virtualenv 
+- virtualenv venv
+- .\venv\Scripts\activate
+- pip install -r requirements.txt
+- python app.py
 
 ## Intefaz de swagger
 
