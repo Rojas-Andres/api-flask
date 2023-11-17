@@ -1,0 +1,6 @@
+.git
+node_modules/
+vendor/bundle/
+Dockerfile
+cdk*
+venv/
