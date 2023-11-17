@@ -21,8 +21,8 @@
 
 ### Run Project with docker
 
-docker build -t flask_api -f develop.Dockerfile .
-` docker run -p 8000:8000 flask_api`
+- ` docker build -t flask_api -f develop.Dockerfile . `
+- ` docker run -p 8000:8000 flask_api `
 
 
 ![](images/run_docker.png)
