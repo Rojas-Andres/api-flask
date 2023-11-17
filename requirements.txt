@@ -1,0 +1,10 @@
+Flask==1.1.4
+psycopg2
+SQLAlchemy==1.4.9
+werkzeug ==0.16.1
+Flask-SQLAlchemy==2.5.1
+PyJWT==1.6.4
+flask_restplus
+requests
+markupsafe==2.0.1
+python-dotenv==0.19.0
