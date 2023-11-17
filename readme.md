@@ -1,5 +1,6 @@
 ## Python 3.9.10
 
+# Crear un archivo .env en la raiz del proyecto basandose en el archivo .env-example
 
 # Correr proyecto local windows
 
