@@ -12,8 +12,7 @@ def generic_post(data):
     except Exception as e:
        
         session.rollback()
-        return jsonify({"errors": e.errors()}), 400
-        # raise Exception("Error al crear el registro")
+        raise Exception("Error al crear el registro")
     return data
 
 def get_perfiles():

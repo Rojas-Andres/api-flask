@@ -2,6 +2,7 @@ from db.db import session
 from sqlalchemy import select
 from db.models import Funcionalidad
 from sqlalchemy.orm import Session
+from flask import Blueprint, jsonify, request
 
 def generic_post(data):
     try:
@@ -13,6 +14,32 @@ def generic_post(data):
         raise Exception("Error al crear el registro")
     return data
 
+def generic_put(id_funcionalidad ,data):
+    try:
+        # session.update(data)
+        # session.commit()
+        # session.refresh(data)
+
+        #  session = Session(self.engine, future=True)
+        query = (
+            data.update()
+            .where(data.id_funcionalidad == id_funcionalidad)
+            .values(data)
+            .returning(
+                data.nombre_funcionalidad,
+                data.link,
+                data.icono,
+                data.fecha_creacion,
+            )
+        )
+
+        result = session.execute(query)
+        session.commit()
+        session.close()
+    
+    except Exception as e:
+        # session.rollback()
+        return jsonify({"errors": e.errors()}), 400
 
 def get_funcionalitys():
     query = session.query(
@@ -28,6 +55,11 @@ def get_funcionalitys():
         data["id_funcionalidad"] = int(data["id_funcionalidad"]) 
         data_funcinonaltys.append(data)
     return data_funcinonaltys
+
+def update_funcionalidad(data):
+    funcionalidad = Funcionalidad(**data)
+    funcionalidad_db = generic_put(Funcionalidad.id_funcionalidad  , funcionalidad)
+    return funcionalidad_db
 
 def create_funcionalidad(data):
     funcionalidad = Funcionalidad(**data)
