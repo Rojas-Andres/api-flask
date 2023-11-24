@@ -5,7 +5,9 @@ from flask_sqlalchemy import SQLAlchemy
 
 # from api.controllers import bp_api
 # from api.funcionalidades import bp_api_2
-from api.audits.audits import api_audits
+# from api.audits.audits import api_audits
+from api.funcionality.funcionality import api_funcionality
+from api.perfiles.perfiles import api_perfiles
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "Th1s1ss3cr3t"
@@ -17,9 +19,9 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 session_bd = Session()
 
-app.register_blueprint(api_audits)
-# app.register_blueprint(bp_api_2)
-
+# app.register_blueprint(api_audits)
+# app.register_blueprint(api_funcionality)
+app.register_blueprint(api_perfiles)
 
 @app.route("/", methods=["GET"])
 def index():
