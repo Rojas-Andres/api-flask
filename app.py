@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 # from api.controllers import bp_api
 # from api.funcionalidades import bp_api_2
 # from api.audits.audits import api_audits
-from api.funcionality.funcionality import api_funcionality
+# from api.funcionality.funcionality import api_funcionality
 from api.perfiles.perfiles import api_perfiles
 
 app = Flask(__name__)

@@ -29,6 +29,10 @@ def get_funcionalitys():
         data_funcinonaltys.append(data)
     return data_funcinonaltys
 
+def create_funcionalidad(data):
+    funcionalidad = Funcionalidad(**data)
+    funcionalidad_db = generic_post(funcionalidad)
+    return funcionalidad_db
 
 def validate_funcionalidad(id_funcionalidad: int):
     funcionalidad = (
@@ -36,8 +40,9 @@ def validate_funcionalidad(id_funcionalidad: int):
     )
     return funcionalidad
 
-def create_funcionalidad(data):
-    funcionalidad = Funcionalidad(**data)
-    funcionalidad_db = generic_post(funcionalidad)
-    return funcionalidad_db
+def format_funcionalidad(funcionalidad):
+    funcionalidad = funcionalidad.__dict__
+    funcionalidad.pop("_sa_instance_state")
+    funcionalidad["id_funcionalidad"] = int(funcionalidad["id_funcionalidad"]) 
+    return funcionalidad
  
