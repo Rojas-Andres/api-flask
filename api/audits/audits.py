@@ -5,14 +5,9 @@ from api.audits.utils import (
     validate_auditoria,
     format_auditoria,
 )
-from pydantic import BaseModel
 from api.audits.validate_audits import AuditsCreate
 
 api_audits = Blueprint("Api Controller", __name__, url_prefix="/api/auditorias")
-
-
-class QueryModel(BaseModel):
-    age: int
 
 
 @api_audits.route("/", methods=["GET"])
