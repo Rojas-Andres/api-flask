@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        // Local
+        {
+            "name": "Flask Local",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",
+            "console": "integratedTerminal"
+        },
+    ]
+}
