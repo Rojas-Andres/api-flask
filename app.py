@@ -19,9 +19,10 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 session_bd = Session()
 
-# app.register_blueprint(api_audits)
+app.register_blueprint(api_audits)
 app.register_blueprint(api_funcionality)
-# app.register_blueprint(api_perfiles)
+app.register_blueprint(api_perfiles)
+
 
 @app.route("/", methods=["GET"])
 def index():

@@ -7,7 +7,7 @@ from api.audits.utils import (
 )
 from api.audits.validate_audits import AuditsCreate
 
-api_audits = Blueprint("Api Controller", __name__, url_prefix="/api/auditorias")
+api_audits = Blueprint("Api Audits", __name__, url_prefix="/api/auditorias")
 
 
 @api_audits.route("/", methods=["GET"])
