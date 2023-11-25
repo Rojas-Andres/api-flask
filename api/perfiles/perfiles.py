@@ -1,15 +1,18 @@
-from flask import Blueprint, jsonify, request 
+from flask import Blueprint, jsonify, request
 
 from api.perfiles.utils import get_perfiles, validate_perfil
 
- 
+
 from api.perfiles.utils import (
-create_perfil, get_perfiles, get_perfiles, validate_perfil
+    create_perfil,
+    get_perfiles,
+    get_perfiles,
+    validate_perfil,
 )
 
 from api.perfiles.validate_perfiles import PerfilesCreate
 
-api_perfiles = Blueprint("Api Controller", __name__, url_prefix="/api/perfiles")
+api_perfiles = Blueprint("Api Perfiles", __name__, url_prefix="/api/perfiles")
 
 
 @api_perfiles.route("/", methods=["GET"])
@@ -21,6 +24,7 @@ def get_perfil():
     return {
         "perfiles": perfiles,
     }
+
 
 @api_perfiles.route("/", methods=["POST"])
 def create_perfil():
